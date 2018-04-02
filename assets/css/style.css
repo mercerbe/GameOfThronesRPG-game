@@ -81,6 +81,15 @@ h2{
   height: auto;
 }
 
+.hp{
+  position: absolute;
+  font-size: 14px;
+  color: #272e36;
+  bottom: 5%;
+  left: 35%;
+
+}
+
 .gameCharacters {
   width: 100%;
   max-width: 250px;
