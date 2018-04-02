@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  
+
   <title>Game of Thrones RPG Game</title>
 </head>
 <!-- TODO:
@@ -33,32 +33,36 @@ PSEUDOCODE
       <div class="gameArea">
         <div class="scoreArea">
           <h2>Wins:
-            <p id="wins"></p>
+            <p id="wins">0</p>
           </h2>
           <h2>defeats:
-            <p id="losses"></p>
+            <p id="losses">0</p>
           </h2>
           <h2>Score:
-            <p id="userScore"></p>
+            <p id="userScore">0</p>
           </h2>
         </div>
         <br>
         <div class="defenderArea">
+          <h2>Defenders:</h2>
           <div class="defenders" id="defender1"></div>
           <div class="defenders" id="defender2"></div>
           <div class="defenders" id="defender3"></div>
         </div>
+        <br>
         <div class="userCharacterArea">
           <h2>Your Character:
             <p id="userCharacter"></p>
+
           </h2>
         </div>
         <div class="buttonArea">
-          <button type="button" name="button" id="attackButton">Attack</button>
-          <button type="button" name="button" id="retreatButton">Retreat</button>
-          <button type="button" name="button" id="surrenderButton">Surrender</button>
+          <button class="gameButtons" type="button" name="button" id="attackButton">Attack</button>
+          <button class="gameButtons" type="button" name="button" id="retreatButton">Retreat</button>
+          <button class="gameButtons" type="button" name="button" id="surrenderButton">Surrender</button>
         </div>
         <div class="graveyardArea">
+          <h2>Graveyard:</h2>
           <div class="graveyard" id="graveyard1"></div>
           <div class="graveyard" id="graveyard1"></div>
           <div class="graveyard" id="graveyard1"></div>

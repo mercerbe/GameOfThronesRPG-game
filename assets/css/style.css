@@ -1,0 +1,98 @@
+html {
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after, {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: inherit;
+  position: relative;
+  background-image: url("../images/GOTbackground3.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+
+}
+
+.header {
+  background-color: #272e36;
+  padding: 3% 0 3% 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+h1{
+  font-size: 40px;
+  margin-bottom: 2%;
+}
+
+h2{
+  font-size: 25px;
+}
+
+#wins,
+#losses,
+#userScore{
+  font-size: 15px;
+}
+
+.scoreArea {
+  background-color: #272e36;
+  width: 30%;
+  margin-left: 5%;
+
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.defenderArea {
+
+}
+
+.userCharacterArea{
+  clear:both;
+  margin-bottom: 5%;
+
+}
+
+.buttonArea {
+  margin-bottom: 5%;
+}
+
+.gameButtons {
+  width:20%;
+  padding: 20px 0px;
+  font-size: 20px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.gameButtons:hover {
+  background-color: #272e36;
+  color: white;
+  border: none;
+
+}
+
+.graveyardArea {
+  margin-bottom: 5%;
+}
+
+footer {
+width: 100%;
+position: absolute;
+bottom: 0;
+left: 0;
+background-color: #272e36;
+color: white;
+padding: 3% 0 3% 0;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+}
