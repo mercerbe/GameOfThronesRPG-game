@@ -85,6 +85,7 @@ h2{
   position: absolute;
   font-size: 14px;
   color: #272e36;
+  text-shadow: 1px 1px 2px black;
   bottom: 5%;
   left: 35%;
 
