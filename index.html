@@ -4,12 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Star Wars RPG Game</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <title>Game of Thrones RPG Game</title>
 </head>
 <!-- TODO:
 PSEUDOCODE
+- onload healthpoints randomly generated for all characters and displayed
+- attack power randomly generated for all characters not displayed (make "value")
+- counter attack power randomly generated for all characters not displayed (make "value")
+- onclick character is chosen by user, moved to new <div>
+- other characters are moved to new <div>
+- alert for user to select first character to fight against
+- onclick attack button, damage delt to character selected
+- immediately damage is delt back to users character
+- when defender character hp <=0 defender is moved to 'graveyard' <div>
+- win is +3, surrender is -2, loss is -3, retreat is 0
 -  -->
 <body>
-
+  <div class="wrapper">
+    <section class="header">
+      <h1>Game Of Thrones RPG</h1>
+      <p>Select A Charater And Battle The Others To Take The Throne!</p>
+    </section>
+    <br>
+    <div class="container">
+      <div class="gameArea">
+        <div class="scoreArea">
+          <h2>Wins:
+            <p id="wins"></p>
+          </h2>
+          <h2>defeats:
+            <p id="losses"></p>
+          </h2>
+          <h2>Score:
+            <p id="userScore"></p>
+          </h2>
+        </div>
+        <br>
+        <div class="defenderArea">
+          <div class="defenders" id="defender1"></div>
+          <div class="defenders" id="defender2"></div>
+          <div class="defenders" id="defender3"></div>
+        </div>
+        <div class="userCharacterArea">
+          <h2>Your Character:
+            <p id="userCharacter"></p>
+          </h2>
+        </div>
+        <div class="buttonArea">
+          <button type="button" name="button" id="attackButton">Attack</button>
+          <button type="button" name="button" id="retreatButton">Retreat</button>
+          <button type="button" name="button" id="surrenderButton">Surrender</button>
+        </div>
+        <div class="graveyardArea">
+          <div class="graveyard" id="graveyard1"></div>
+          <div class="graveyard" id="graveyard1"></div>
+          <div class="graveyard" id="graveyard1"></div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+<footer>&copyBenMercerCodes</footer>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
