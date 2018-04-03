@@ -19,7 +19,7 @@ In this assignment, you'll create another fun and interactive game for web brows
 
 4. Set up your repository to deploy to Github Pages.
 
-5. Push the above changes to GitHub. 
+5. Push the above changes to GitHub.
 
 6. Choose whichever game you want to make from the choices below. The CrystalsCollector game is the recommended option, but if you are looking for an extra hard challenge then take a stab at the Star Wars exercise. (Note: Only choose the Star Wars Exercise if you are feeling very comfortable with the material covered in class. The Crystal Collector activity is plenty challenging enough!).
 
@@ -29,7 +29,7 @@ In this assignment, you'll create another fun and interactive game for web brows
 
 1. [Watch the demo](homework_demos/crystalsCollector_demo.mp4).
 
-2. The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters. 
+2. The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters.
 
 3. Here's how the app works:
 
@@ -37,7 +37,7 @@ In this assignment, you'll create another fun and interactive game for web brows
 
    * The player will be shown a random number at the start of the game.
 
-   * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+   * When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
 
      * Your game will hide this amount until the player clicks a crystal.
      * When they do click one, update the player's score counter.
@@ -75,7 +75,7 @@ In this assignment, you'll create another fun and interactive game for web brows
    * Once the player selects an opponent, that enemy is moved to a `defender area`.
 
    * The player will now be able to click the `attack` button.
-     * Whenever the player clicks `attack`, their character damages the defender. The opponent will lose `HP` (health points). These points are displayed at the bottom of the defender's picture. 
+     * Whenever the player clicks `attack`, their character damages the defender. The opponent will lose `HP` (health points). These points are displayed at the bottom of the defender's picture.
      * The opponent character will instantly counter the attack. When that happens, the player's character will lose some of their `HP`. These points are shown at the bottom of the player character's picture.
 
 3. The player will keep hitting the attack button in an effort to defeat their opponent.
@@ -88,7 +88,7 @@ In this assignment, you'll create another fun and interactive game for web brows
 
 * Each character in the game has 3 attributes: `Health Points`, `Attack Power` and `Counter Attack Power`.
 
-* Each time the player attacks, their character's Attack Power increases by its base Attack Power. 
+* Each time the player attacks, their character's Attack Power increases by its base Attack Power.
   * For example, if the base Attack Power is 6, each attack will increase the Attack Power by 6 (12, 18, 24, 30 and so on).
 * The enemy character only has `Counter Attack Power`. 
 
@@ -96,7 +96,7 @@ In this assignment, you'll create another fun and interactive game for web brows
 
 * The `Health Points`, `Attack Power` and `Counter Attack Power` of each character must differ.
 
-* No characters in the game can heal or recover Health Points. 
+* No characters in the game can heal or recover Health Points.
 
   * A winning player must pick their characters wisely by first fighting an enemy with low `Counter Attack Power`. This will allow them to grind `Attack Power` and to take on enemies before they lose all of their `Health Points`. Healing options would mess with this dynamic.
 

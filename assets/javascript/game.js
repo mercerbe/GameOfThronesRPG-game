@@ -1,4 +1,9 @@
 $(document).ready(function() {
+//instructions
+$("#instructions").hide();
+$(".dropbtn").click(function() {
+  $("#instructions").toggle(600);
+});
 
 //Golbal variables
   var wins = 0;
