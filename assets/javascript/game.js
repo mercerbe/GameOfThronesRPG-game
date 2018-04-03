@@ -71,9 +71,23 @@ $(".gameCharacters").on("click", function() {
     //if statements depending on character clicked, move others to defenderArea div
   if ($(this).attr("id") == "jonSnowbtn") {
     $("#danny, #drogo, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
-    //log
-    console.log(this);
   };
+  if ($(this).attr("id") == "dannybtn") {
+    $("#jonSnow, #drogo, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
+  };
+  if ($(this).attr("id") == "drogobtn") {
+    $("#danny, #jonSnow, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
+  };
+  if ($(this).attr("id") == "nightKingbtn") {
+    $("#danny, #drogo, #jonSnow, #theHound, #theMountain").appendTo($('.defenderArea'));
+  };
+  if ($(this).attr("id") == "theHoundbtn") {
+    $("#danny, #drogo, #nightKing, #jonSnow, #theMountain").appendTo($('.defenderArea'));
+  };
+  if ($(this).attr("id") == "theMountainbtn") {
+    $("#danny, #drogo, #nightKing, #theHound, #jonSnow").appendTo($('.defenderArea'));
+  };
+
 
 
 });
