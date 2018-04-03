@@ -4,12 +4,6 @@ $(document).ready(function() {
   var wins = 0;
   var losses = 0;
   var score = 0;
-  var jonSnow;
-  var danny;
-  var drogo;
-  var nightKing;
-  var theHound;
-  var theMountain;
 
 //FUNCTIONS
 
@@ -19,30 +13,27 @@ function startGame() {
   //reset HP for gameCharacters
   var hpJon = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpJon").append(hpJon);
-    console.log(hpJon);
+    console.log("Jon's HP for this game is: " + hpJon);
   var hpDanny = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpDanny").append(hpDanny);
-    console.log(hpDanny);
+    console.log("Daenerys' HP for this game is: " + hpDanny);
   var hpDrogo = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpDrogo").append(hpDrogo);
-    console.log(hpDrogo);
+    console.log("Drogo's HP for this game is: " + hpDrogo);
   var hpNightKing = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpNightKing").append(hpNightKing);
-    console.log(hpNightKing);
+    console.log("The Night King's HP for this game is: " + hpNightKing);
   var hpTheHound = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpTheHound").append(hpTheHound);
-    console.log(hpTheHound);
+    console.log("The Hound's HP for this game is: " + hpTheHound);
   var hpTheMountain = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpTheMountain").append(hpTheMountain);
-    console.log(hpTheMountain);
+    console.log("The Mountain's HP for this game is: " + hpTheMountain);
 
   //reset Attack values
-  var attackJon;
-  var attackDanny;
-  var attackDrogo;
-  var attackNightKing;
-  var attackTheHound;
-  var attackTheMountain;
+  var attackPower = Math.floor(Math.random() * (8 - 5 + 1) + 5);
+    $(".gameCharacters").data('attackPower', 7);
+    console.log("attack power for this game starts at: " + attackPower);
 
   //reset Counter values
   var counterJon = Math.floor(Math.random() * (20 - 5 + 1) + 5);
@@ -59,15 +50,29 @@ function startGame() {
     $("#theMountain").append("value", counterTheMountain);
 
   //return gameCharacters to 'your character' div
-
-
+  $("#jonSnow", "#danny", "#drogo", "#nightKing", "#theHound", "#theMountain" ).detach().appendTo('#userCharacterArea');
 
 //check win
 function checkWin() {
 
 };
 
-}
+//User Selects Character
+$(".characterContainer").on("click", function() {
+
+});
+
+//Attack Function
+$("#attackButton").on("click", function() {
+
+});
+
+
+
+
+
+
+};
 
 startGame();
 
