@@ -15,6 +15,8 @@ $(".dropbtn").click(function() {
 //start game reset variables
 function startGame() {
 
+  //append empty values for hp, attack and counter attack for each character
+
   //reset HP for gameCharacters
   var hpJon = Math.floor(Math.random() * (125 - 50 + 1) + 50);
     $("#hpJon").append(hpJon);
@@ -36,22 +38,22 @@ function startGame() {
     console.log("The Mountain's HP for this game is: " + hpTheMountain);
 
   //reset Attack values
-  var attackPower = Math.floor(Math.random() * (8 - 5 + 1) + 5);
+  var attackPower = Math.floor(Math.random() * (10 - 7 + 1) + 7);
     $(".gameCharacters").data('attackPower', 7);
     console.log("attack power for this game starts at: " + attackPower);
 
   //reset Counter values
-  var counterJon = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+  var counterJon = Math.floor(Math.random() * (15 - 5 + 1) + 5);
     $("#jonSnow").attr("value", "hidden", counterJon).appendTo('#jonSnow');
-  var counterDanny = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+  var counterDanny = Math.floor(Math.random() * (15 - 5 + 1) + 5);
     $("#danny").attr("value", "hidden", counterDanny).appendTo('#danny');
-  var counterDrogo = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+  var counterDrogo = Math.floor(Math.random() * (15 - 5 + 1) + 5);
     $("#drogo").attr("value", "hidden", counterDrogo).appendTo("#drogo");
-  var counterNightKing = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+  var counterNightKing = Math.floor(Math.random() * (15 - 5 + 1) + 5);
     $("#nightKing").attr("value","hidden", counterNightKing).appendTo('#nightKing');
-  var counterTheHound = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+  var counterTheHound = Math.floor(Math.random() * (15 - 5 + 1) + 5);
     $("#theHound").attr("value","hidden", counterTheHound).appendTo('#theHound');
-  var counterTheMountain = Math.floor(Math.random() * (20 - 5 + 1) + 5);
+  var counterTheMountain = Math.floor(Math.random() * (15 - 5 + 1) + 5);
     $("#theMountain").attr("value","hidden", counterTheMountain).appendTo('#theMountain');
     console.log("Counter Attack Powers are: " + counterDanny,counterDrogo,counterJon,counterNightKing,counterTheHound,counterTheMountain);
 
@@ -65,15 +67,19 @@ function checkWin() {
 };
 
 //User Selects Character
-$("#jonSnow, #danny, #drogo, #nightKing, #theHound, #theMountain").on("click", function() {
+$(".gameCharacters").on("click", function() {
     //if statements depending on character clicked, move others to defenderArea div
-  if (this.id == "#jonSnow") {
-    $("#danny, #drogo, #nightKing, #theHound, #theMountain").insertAfter('#defenderHeader');
-    //
+  if ($(this).attr("id") == "jonSnowbtn") {
+    $("#danny, #drogo, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
+    //log
+    console.log(this);
   };
 
 
 });
+
+//User Selects Character to Attack
+$("")
 
 //Attack Function
 $("#attackButton").on("click", function() {
