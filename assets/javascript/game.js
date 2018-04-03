@@ -54,7 +54,7 @@ function startGame() {
   var counterTheMountain = Math.floor(Math.random() * (20 - 5 + 1) + 5);
     $("#theMountain").append("value", counterTheMountain);
 
-  //return gameCharacters to 'your character' div
+  //return gameCharacters to 'userCharacterArea' div
   $("#jonSnow", "#danny", "#drogo", "#nightKing", "#theHound", "#theMountain" ).detach().appendTo('#userCharacterArea');
 
 //check win
@@ -64,7 +64,7 @@ function checkWin() {
 
 //User Selects Character
 $(".characterContainer").on("click", function() {
-
+    //if statements depending on character clicked, move others to defenderArea div
 });
 
 //Attack Function
@@ -72,7 +72,15 @@ $("#attackButton").on("click", function() {
 
 });
 
+//retreat button
+$("#retreatButton").on("click", function() {
 
+});
+
+//Surrender button
+$("#surrenderButton").on("click", function() {
+
+});
 
 
 
