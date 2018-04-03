@@ -92,4 +92,15 @@ startGame();
 
 //notes:
 //have game know when a character is chosen
+//moving characters to new divs with detach() and appendTo()
+//write increase in attack value after each attack button click
+//
+
+
+
+
+
+
+
+
 //

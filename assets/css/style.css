@@ -96,6 +96,7 @@ h2{
 }
 
 #instructions {
+  z-index: 1;
   margin-top: 7%;
   margin-right: 12%;
   border-radius: 10px;
