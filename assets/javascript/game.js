@@ -42,29 +42,37 @@ function startGame() {
 
   //reset Counter values
   var counterJon = Math.floor(Math.random() * (20 - 5 + 1) + 5);
-    $("#jonSnow").append("value", counterJon);
+    $("#jonSnow").attr("value", "hidden", counterJon).appendTo('#jonSnow');
   var counterDanny = Math.floor(Math.random() * (20 - 5 + 1) + 5);
-    $("#danny").append("value", counterDanny);
+    $("#danny").attr("value", "hidden", counterDanny).appendTo('#danny');
   var counterDrogo = Math.floor(Math.random() * (20 - 5 + 1) + 5);
-    $("#drogo").append("value", counterDrogo);
+    $("#drogo").attr("value", "hidden", counterDrogo).appendTo("#drogo");
   var counterNightKing = Math.floor(Math.random() * (20 - 5 + 1) + 5);
-    $("#nightKing").append("value", counterNightKing);
+    $("#nightKing").attr("value","hidden", counterNightKing).appendTo('#nightKing');
   var counterTheHound = Math.floor(Math.random() * (20 - 5 + 1) + 5);
-    $("#theHound").append("value", counterTheHound);
+    $("#theHound").attr("value","hidden", counterTheHound).appendTo('#theHound');
   var counterTheMountain = Math.floor(Math.random() * (20 - 5 + 1) + 5);
-    $("#theMountain").append("value", counterTheMountain);
+    $("#theMountain").attr("value","hidden", counterTheMountain).appendTo('#theMountain');
+    console.log("Counter Attack Powers are: " + counterDanny,counterDrogo,counterJon,counterNightKing,counterTheHound,counterTheMountain);
 
   //return gameCharacters to 'userCharacterArea' div
-  $("#jonSnow", "#danny", "#drogo", "#nightKing", "#theHound", "#theMountain" ).detach().appendTo('#userCharacterArea');
+  $("#jonSnow, #danny, #drogo, #nightKing, #theHound, #theMountain").detach().appendTo('.userCharacterArea');
 
 //check win
 function checkWin() {
 
+
 };
 
 //User Selects Character
-$(".characterContainer").on("click", function() {
+$("#jonSnow, #danny, #drogo, #nightKing, #theHound, #theMountain").on("click", function() {
     //if statements depending on character clicked, move others to defenderArea div
+  if (this.id == "#jonSnow") {
+    $("#danny, #drogo, #nightKing, #theHound, #theMountain").insertAfter('#defenderHeader');
+    //
+  };
+
+
 });
 
 //Attack Function
@@ -74,11 +82,21 @@ $("#attackButton").on("click", function() {
 
 //retreat button
 $("#retreatButton").on("click", function() {
+  losses++;
+  $("#losses").text(losses);
+  score--;
+  $("#userScore").text(score);
+  //startGame();
 
 });
 
 //Surrender button
 $("#surrenderButton").on("click", function() {
+  losses++;
+  $("#losses").text(losses);
+  score -= 2;
+  $("#userScore").text(score);
+  //startGame();
 
 });
 
@@ -102,6 +120,7 @@ startGame();
 //have game know when a character is chosen
 //moving characters to new divs with detach() and appendTo()
 //write increase in attack value after each attack button click
+//need to have values get cleared at begining of startGame
 //
 
 

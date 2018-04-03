@@ -40,7 +40,7 @@ PSEUDOCODE
                 The defender area and click the "attack" button to deal damage to them.
                 If that opponent is defeated, click a new opponent and continue to attack.
                 If all opponents are defeated you win and your score is increased by 3. Retreat
-                and you lose 1 point. Surrend and you lose 2.
+                and you lose 1 point. Surrender and you lose 2.
             </p>
           </div>
         </div>
@@ -57,7 +57,7 @@ PSEUDOCODE
         </div>
         <br>
         <div class="defenderArea">
-          <h2>Defenders:</h2>
+          <h2 id="defenderHeader">Defenders:</h2>
           <div class="defenders" id="defender1"></div>
           <div class="defenders" id="defender2"></div>
           <div class="defenders" id="defender3"></div>
@@ -66,38 +66,38 @@ PSEUDOCODE
         <div class="userCharacterArea">
           <h2>Your Character:
             <p id="userCharacter"></p>
-            <div class="characterContainer">
-              <input type="image" class="gameCharacters" id="jonSnow" src="assets/images/jonSnow1.jpg" value=""><p class="hp" id="hpJon">hp:</p></input>
+            <div class="characterContainer" id="jonSnow" value="">
+              <input type="image" class="gameCharacters" src="assets/images/jonSnow1.jpg" id="jonSnowbtn"><p class="hp" id="hpJon">hp:</p></input>
                 <div class="characterInfo middle">
                   <p class="text">Jon Snow</p>
                 </div>
             </div>
-            <div class="characterContainer">
-              <input type="image" class="gameCharacters" id="danny" src="assets/images/danny1.jpg" value=""><p class="hp" id="hpDanny">hp:</p></input>
+            <div class="characterContainer" value="" id="danny">
+              <input type="image" class="gameCharacters" src="assets/images/danny1.jpg"><p class="hp" id="hpDanny">hp:</p></input>
               <div class="characterInfo middle">
                 <p class="text">Daenerys</p>
               </div>
             </div>
-            <div class="characterContainer">
-              <input type="image" class="gameCharacters" id="drogo" src="assets/images/drogo1.jpg" value=""><p class="hp" id="hpDrogo">hp:</p></input>
+            <div class="characterContainer" value="" id="drogo">
+              <input type="image" class="gameCharacters" src="assets/images/drogo1.jpg"><p class="hp" id="hpDrogo">hp:</p></input>
               <div class="characterInfo middle">
                 <p class="text">Khal Drogo</p>
               </div>
             </div>
-            <div class="characterContainer">
-              <input type="image" class="gameCharacters" id="nightKing" src="assets/images/nightKing1.jpg" value=""><p class="hp" id="hpNightKing">hp:</p></input>
+            <div class="characterContainer" value="" id="nightKing">
+              <input type="image" class="gameCharacters" src="assets/images/nightKing1.jpg"><p class="hp" id="hpNightKing">hp:</p></input>
               <div class="characterInfo middle">
                 <p class="text">The Night King</p>
               </div>
             </div>
-            <div class="characterContainer">
-              <input type="image" class="gameCharacters" id="theHound" src="assets/images/theHound1.jpg" value=""><p class="hp" id="hpTheHound">hp:</p></input>
+            <div class="characterContainer" value="" id="theHound">
+              <input type="image" class="gameCharacters" src="assets/images/theHound1.jpg"><p class="hp" id="hpTheHound">hp:</p></input>
               <div class="characterInfo middle">
                 <p class="text">The Hound</p>
               </div>
             </div>
-            <div class="characterContainer">
-              <input type="image" class="gameCharacters" id="theMountain" src="assets/images/theMountain2.png" value=""><p class="hp" id="hpTheMountain">hp:</p></input>
+            <div class="characterContainer" value="" id="theMountain">
+              <input type="image" class="gameCharacters" src="assets/images/theMountain2.png"><p class="hp" id="hpTheMountain">hp:</p></input>
               <div class="characterInfo middle">
                 <p class="text">The Mountain</p>
               </div>
