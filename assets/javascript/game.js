@@ -39,7 +39,7 @@ function startGame() {
 
   //reset Attack values
   var attackPower = Math.floor(Math.random() * (10 - 7 + 1) + 7);
-    $(".gameCharacters").data('attackPower', 7);
+    $(".gameCharacters").data('attackPower');
     console.log("attack power for this game starts at: " + attackPower);
 
   //reset Counter values
@@ -60,45 +60,52 @@ function startGame() {
   //return gameCharacters to 'userCharacterArea' div
   $("#jonSnow, #danny, #drogo, #nightKing, #theHound, #theMountain").detach().appendTo('.userCharacterArea');
 
-//check win
-function checkWin() {
-
-
-};
+};//end of startGame
 
 //User Selects Character
 $(".gameCharacters").on("click", function() {
     //if statements depending on character clicked, move others to defenderArea div
   if ($(this).attr("id") == "jonSnowbtn") {
     $("#danny, #drogo, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
+    setTimeout(function() {alert("Choose A Defender To Attack"), 10000},);
+
   };
   if ($(this).attr("id") == "dannybtn") {
     $("#jonSnow, #drogo, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
+    setTimeout(function() {alert("Choose A Defender To Attack"), 10000},);
   };
   if ($(this).attr("id") == "drogobtn") {
     $("#danny, #jonSnow, #nightKing, #theHound, #theMountain").appendTo($('.defenderArea'));
+    setTimeout(function() {alert("Choose A Defender To Attack"), 10000},);
   };
   if ($(this).attr("id") == "nightKingbtn") {
     $("#danny, #drogo, #jonSnow, #theHound, #theMountain").appendTo($('.defenderArea'));
+    setTimeout(function() {alert("Choose A Defender To Attack"), 10000},);
   };
   if ($(this).attr("id") == "theHoundbtn") {
     $("#danny, #drogo, #nightKing, #jonSnow, #theMountain").appendTo($('.defenderArea'));
+    setTimeout(function() {alert("Choose A Defender To Attack"), 10000},);
   };
   if ($(this).attr("id") == "theMountainbtn") {
     $("#danny, #drogo, #nightKing, #theHound, #jonSnow").appendTo($('.defenderArea'));
+    setTimeout(function() {alert("Choose A Defender To Attack"), 10000},);
   };
-
-
-
+  return;
 });
 
 //User Selects Character to Attack
-$("")
+
 
 //Attack Function
-$("#attackButton").on("click", function() {
+  $("#attackButton").on("click", function() {
 
-});
+  });
+
+//check win
+function checkWin() {
+
+
+};
 
 //retreat button
 $("#retreatButton").on("click", function() {
@@ -106,7 +113,7 @@ $("#retreatButton").on("click", function() {
   $("#losses").text(losses);
   score--;
   $("#userScore").text(score);
-  //startGame();
+  startGame();
 
 });
 
@@ -116,14 +123,9 @@ $("#surrenderButton").on("click", function() {
   $("#losses").text(losses);
   score -= 2;
   $("#userScore").text(score);
-  //startGame();
+  startGame();
 
 });
-
-
-
-
-};
 
 startGame();
 
