@@ -1,12 +1,74 @@
+html {
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after, {
+  box-sizing: inherit;
+}
 
 body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url("../images/GOTbackground3.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
+    min-height: 100%;
+    min-width: 100%;
+    box-sizing: inherit;
+    font-family: 'Cinzel Decorative', cursive;
 }
+
+.instructions {
+  background-color: #272e36;
+  width: 25%;
+  float: right;
+  margin-right: 5%;
+  border-radius: 10px;
+  padding: 2%;
+  position: relative;
+
+}
+
+.dropbtn {
+  background-color: #272e36;
+  color: white;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cinzel Decorative', cursive;
+  transition: 0.5s ease;
+
+}
+
+.dropbtn:hover {
+  color: #db8b5a;
+
+}
+
+.dropDown-Instructions {
+  width:100%;
+  border-radius: 10px;
+  position: absolute;
+
+}
+
+#instructions {
+  z-index: 1;
+  margin-top: 7%;
+  margin-right: 12%;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.3;
+  display: block;
+  background-color: #272e36;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+
+}
+
+.show {
+  display: block;
+}
+
 .character{
     text-align: center;
     background-color: aliceblue;
@@ -16,13 +78,49 @@ body{
     height: 180px;
     width: 180px;
 }
-img{
+.gameArea img {
     padding: 5px 5px;
     max-height: 120px;
     border-radius: 50%;
 }
-.row
+.rows
 {
     width:100%;
     overflow: auto;
+}
+
+#footer {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: rgb(244, 243, 243);
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  background-color: rgb(52,58,64);
+  padding: 1% 0% 0% 0%;
+  z-index: 1;
+}
+
+/*media queries*/
+
+@media only screen and (max-width: 500px) {
+  #footer {
+    bottom: -100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #footer {
+    bottom: -200px;
+  }
+  body {}
+}
+
+@media only screen and (min-width: 769px) {
+  #footer {
+    bottom: -300px;
+  }
+  body {}
 }

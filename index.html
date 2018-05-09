@@ -1,36 +1,124 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GOT RPG Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/javascript/gameObj.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GOT RPG Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
+
 <body>
-    <div id="characterSection" class="row">
-        <h1>Characters Available to Fight As:</h1>
+  <div class="wrapper">
+    <!--nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Game Of Thrones RPG</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--instructions-->
+<div class="instructions">
+  <button class="dropbtn">Instructions</button>
+  <div id="dropDown" class="dropDown-Instructions">
+    <p id="instructions">Click on a character to play with. Then click on an opponent in
+        The defender area and click the "attack" button to deal damage to them.
+        If that opponent is defeated, click a new opponent and continue to attack.
+        If all opponents are defeated you win and your score is increased by 3. Retreat
+        and you lose 1 point. Surrender and you lose 2.
+    </p>
+  </div>
+</div>
+
+<!--game area-->
+<div class="container-fluid gameArea">
+  <div id="characterSection" class="rows">
+    <h1>Characters Available to Fight As:</h1>
+
+  </div>
+  <div class="rows">
+    <h1>Your Character</h1>
+    <div id="defenders">
 
     </div>
-    <div class="row">
-        <h1>Your Character</h1>
-        <div id="defenders">
+  </div>
 
-        </div>
-    </div>
+  <div id="buttons" class="rows">
+    <button id="attack">Attack</button>
+  </div>
+  <div class="rows">
+    <h1>Your Enemy</h1>
+    <div id="attackers">
 
-    <div id="buttons" class="row">
-        <button id="attack">Attack</button>
     </div>
-    <div class="row">
-        <h1>Your Enemy</h1>
-        <div id="attackers">
+  </div>
+</div>
+  <!--footer-->
+<section id="footer">
+  <div class="container-fluid">
+    <div class="row text-center text-xs-center text-sm-center text-md-left">
+      <div class="col-xs-12 col-sm-12 col-md-3">
+        <h5 class="footerh5">Quick Links</h5>
+        <ul class="list-unstyled quick-links">
+          <li><a class="links" href="https://arbittrage.com/"><i class="fa fa-angle-double-right links"></i>Home</a></li>
+          <li><a class="links" href="contact.html"><i class="fa fa-angle-double-right links"></i>Contact</a></li>
+          <li><a class="links" href="https://github.com/mercerbe/Arbittrage"><i class="fa fa-angle-double-right links"></i>Github Repo</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5">
+        <ul class="list-unstyled list-inline text-center">
+          <h5 class="footerh5">Connect With Me:</h5>
+          <li class="list-inline-item"><a href="https://www.facebook.com" target="_blank"><img width="35px" src="assets/images/facebook.png" /></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com" target="_blank"><img width="35px" src="assets/images/twitter.png" /></a></li>
+          <li class="list-inline-item"><a href="https://www.linkedin.com" target="_blank"><img width="35px" src="assets/images/linkedin.png" /></a></li>
+          <li class="list-inline-item"><a href="https://www.google.com" target="_blank"><img width="35px" src="assets/images/google.png" /></a></li>
+          <li class="list-inline-item"><a href="https://github.com/mercerbe/Arbittrage" target="_blank"><img width="35px" src="assets/images/github.png" /></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"><img width="35px" src="assets/images/instagram.png" /></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-3 text-md-right text-sm-center text-xs-center">
+        <h5 class="footerh5">Other Resources</h5>
+        <ul class="list-unstyled quick-links">
+          <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>Backstretch</a></li>
+          <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>jQuery</a></li>
+          <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>Watch Game of Thrones</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="h6 copy">&copyBenMercerCodes</p>
+</section>
+</div>
+  <!--scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!--backstretch-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+  <script src="./assets/javascript/gameObj.js"></script>
 
-        </div>
-    </div>
 </body>
+
 </html>

@@ -1,3 +1,11 @@
+//backstretch
+$("body").backstretch("assets/images/GOTbackground3.jpg");
+//Instructions
+$("#instructions").hide();
+$(".dropbtn").click(function() {
+  $("#instructions").toggle(600);
+});
+//characters
 var danny = {
     name:"Daenerys",
     healthPoints: 22,
