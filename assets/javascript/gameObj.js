@@ -1,80 +1,101 @@
-//reset variables for game object
-function resetGame() {
+var danny = {
+    name:"Daenerys",
+    healthPoints: 22,
+    attackPower: 4,
+    counterAttackPower: 10,
+    image: "./assets/images/danny1.jpg"
+}
+var jonSnow = {
+    name:"John Snow",
+    healthPoints: 15,
+    attackPower: 8,
+    counterAttackPower: 4,
+    image: "./assets/images/jonSnow1.jpg"
+}
+var nightKing = {
+    name:"The Night King",
+    healthPoints: 18,
+    attackPower: 6,
+    counterAttackPower: 8,
+    image: "./assets/images/nightKing1.jpg"
+}
+var drogo = {
+    name:"Drogo",
+    healthPoints: 18,
+    attackPower: 10,
+    counterAttackPower: 10,
+    image: "./assets/images/drogo1.jpg"
+}
 
-  window.gameObj = {
-    attack: false;
-    win: false;
-    loss: false;
-    surrender: false;
-    retreat: false;
-    gameOver: false;
-    //other variables if needed;
-    characterList: [
-      {
-        character: "Jon Snow";
-        picture: "assets/images/jonSnow1.jpg";
-        hp: Math.floor(Math.random() * (125 - 50 + 1) + 50);
-        attack: Math.floor(Math.random() * (10 - 7 + 1) + 7);
-        counterAttack: Math.floor(Math.random() * (15 - 5 + 1) + 5);
-      };
-      {
-        character: "Danny";
-        picture: "assets/images/danny1.jpg";
-        hp: Math.floor(Math.random() * (125 - 50 + 1) + 50);
-        attack: Math.floor(Math.random() * (10 - 7 + 1) + 7);
-        counterAttack: Math.floor(Math.random() * (15 - 5 + 1) + 5);
-      };
-      {
-        character: "Drogo";
-        picture: "assets/images/drogo1.jpg";
-        hp: Math.floor(Math.random() * (125 - 50 + 1) + 50);
-        attack: Math.floor(Math.random() * (10 - 7 + 1) + 7);
-        counterAttack: Math.floor(Math.random() * (15 - 5 + 1) + 5);
-      };
-      {
-        character: "The Night King";
-        picture: "assets/images/nightKing1.jpg";
-        hp: Math.floor(Math.random() * (125 - 50 + 1) + 50);
-        attack: Math.floor(Math.random() * (10 - 7 + 1) + 7);
-        counterAttack: Math.floor(Math.random() * (15 - 5 + 1) + 5);
-      };
-      {
-        character: "The Hound";
-        picture: "assets/images/theHound1.jpg";
-        hp: Math.floor(Math.random() * (125 - 50 + 1) + 50);
-        attack: Math.floor(Math.random() * (10 - 7 + 1) + 7);
-        counterAttack: Math.floor(Math.random() * (15 - 5 + 1) + 5);
-      };
-      {
-        character: "The Mountain";
-        picture: "assets/images/theMountain2.jpg";
-        hp: Math.floor(Math.random() * (125 - 50 + 1) + 50);
-        attack: Math.floor(Math.random() * (10 - 7 + 1) + 7);
-        counterAttack: Math.floor(Math.random() * (15 - 5 + 1) + 5);
-      };
-    ];
+function attack(a, b)
+{
+    var damage = Math.floor(Math.random()*parseInt($(a).attr("attackPower")));
+    console.log(damage);
+    var health = parseInt($(b).attr("health"));
+    health -= damage;
+    console.log(health);
+    $(b).attr("health",health);
+    $(b + " .health").text(health);
+};
 
-    //Start Game Resets
-    startGame: true;
-    userCharacter: null;
-    currentDefender: null;
-    graveyard: null;
-    currentAttack: null;
-    wins: false;
-    losses: false;
+function combatantSelected()
+{
+    if($("#defenders").html().trim() == "")
+    {
+        return false;
+    }
+    return true;
+};
 
-    //Game Audio
-    gameSound: "assets/audio/gotTheme.mp3";
-    battleSound: "assets/audio/battleSound.mp3";
-    attackSound: "assets/audio/steelsword.mp3";
+$(document).ready(function() {
+    var characters = [danny,jonSnow,nightKing,drogo]
+    characterDiv = $("#characterSection")
+    for (var i = 0; i < characters.length; i++) {
+        var image = $("<img>");
+        image.attr("src",characters[i].image);
+        var name = $("<h1></h1>");
+        name.text(characters[i].name);
+        var health = $("<h1></h1>");
+        health.text(characters[i].healthPoints);
+        health.addClass("health");
+        var character = $("<div></div>");
+        character.addClass("character");
+        character.attr("health", characters[i].healthPoints);
+        character.attr("name",characters[i].name);
+        character.attr("attackPower",characters[i].attackPower);
+        character.attr("counterAttackPower",characters[i].counterAttackPower);
+        character.append(name);
+        character.append(image);
+        character.append(health);
+        characterDiv.append(character);
+    }
 
-  };//end of game object
-};//end of resetGame()
+    $("#characterSection").on("click", ".character", function() {
+        if(combatantSelected())
+        {
+            $(this).attr("id","attacker");
+            $(this).css("background-color", "red");
+            $("#attackers").html(this);
+        }
+        else{
+            $(this).attr("id","defender");
+            $(this).css("background-color", "green")
+            $("#defenders").html(this);
+        }
+      });
 
-//Setup and display
-$$(document).ready(function() {
-  reset();
-  
+    $("#buttons").on("click", "#attack", function() {
+        attack("#attacker","#defender");
+        attack("#defender","#attacker");
+        if(parseInt($("#defender").attr("health")) <= 0)
+        {
+            $("#defenders").html("");
+        }
+        else if(parseInt($("#attacker").attr("health"))<= 0)
+        {
+            $("#attackers").html("");
+        }
+    });
 });
 
 

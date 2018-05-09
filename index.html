@@ -1,132 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GOT RPG Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 
-  <title>Game of Thrones RPG Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/javascript/gameObj.js"></script>
 </head>
-<!-- TODO:
-PSEUDOCODE
-- onload healthpoints randomly generated for all characters and displayed
-- attack power randomly generated for all characters not displayed (make "value")
-- counter attack power randomly generated for all characters not displayed (make "value")
-- onclick character is chosen by user, moved to new <div>
-- other characters are moved to new <div>
-- alert for user to select first character to fight against
-- onclick attack button, damage delt to character selected
-- immediately damage is delt back to users character
-- when defender character hp <=0 defender is moved to 'graveyard' <div>
-- win is +3, surrender is -2, loss is -3, retreat is 0
--  -->
 <body>
-  <div class="wrapper">
-    <section class="header">
-      <h1>Game Of Thrones RPG</h1>
-      <p>Select A Character And Battle The Others To Take The Throne!</p>
-    </section>
-    <br>
-    <div class="container">
-      <div class="gameArea">
-        <div class="instructions">
-          <button class="dropbtn">Instructions</button>
-          <div id="dropDown" class="dropDown-Instructions">
-            <p id="instructions">Click on a character to play with. Then click on an opponent in
-                The defender area and click the "attack" button to deal damage to them.
-                If that opponent is defeated, click a new opponent and continue to attack.
-                If all opponents are defeated you win and your score is increased by 3. Retreat
-                and you lose 1 point. Surrender and you lose 2.
-            </p>
-          </div>
-        </div>
-        <div class="scoreArea">
-          <h2>Wins:
-            <p id="wins">0</p>
-          </h2>
-          <h2>Defeats:
-            <p id="losses">0</p>
-          </h2>
-          <h2>Score:
-            <p id="userScore">0</p>
-          </h2>
-        </div>
-        <br>
-        <div class="defenderArea">
-          <h2 id="defenderHeader">Defenders:</h2>
-          <div class="defenders" id="defender1"></div>
-          <div class="defenders" id="defender2"></div>
-          <div class="defenders" id="defender3"></div>
-          <div class="defenders" id="defender4"></div>
-          <div class="defenders" id="defender5"></div>
-        </div>
-        <br>
-        <div class="currentDefender">
-          <h2 id="currentDefender">Current Defender:</h2>
-        </div>
-        <br>
-        <div class="userCharacterArea">
-          <h2>Your Character:
-            <p id="userCharacter"></p>
-            <div type="button" class="characterContainer" id="jonSnow" value="">
-              <input type="image" class="gameCharacters" src="assets/images/jonSnow1.jpg" id="jonSnowbtn"><p class="hp" id="hpJon">hp:</p></input>
-                <div class="characterInfo middle">
-                  <p class="text">Jon Snow</p>
-                </div>
-            </div>
-            <div class="characterContainer" value="" id="danny">
-              <input type="image" class="gameCharacters" src="assets/images/danny1.jpg" id="dannybtn"><p class="hp" id="hpDanny">hp:</p></input>
-              <div class="characterInfo middle">
-                <p class="text">Daenerys</p>
-              </div>
-            </div>
-            <div class="characterContainer" value="" id="drogo">
-              <input type="image" class="gameCharacters" src="assets/images/drogo1.jpg" id="drogobtn"><p class="hp" id="hpDrogo">hp:</p></input>
-              <div class="characterInfo middle">
-                <p class="text">Khal Drogo</p>
-              </div>
-            </div>
-            <div class="characterContainer" value="" id="nightKing">
-              <input type="image" class="gameCharacters" src="assets/images/nightKing1.jpg" id="nightKingbtn"><p class="hp" id="hpNightKing">hp:</p></input>
-              <div class="characterInfo middle">
-                <p class="text">The Night King</p>
-              </div>
-            </div>
-            <div class="characterContainer" value="" id="theHound">
-              <input type="image" class="gameCharacters" src="assets/images/theHound1.jpg" id="theHoundbtn"><p class="hp" id="hpTheHound">hp:</p></input>
-              <div class="characterInfo middle">
-                <p class="text">The Hound</p>
-              </div>
-            </div>
-            <div class="characterContainer" value="" id="theMountain">
-              <input type="image" class="gameCharacters" src="assets/images/theMountain2.png" id="theMountainbtn"><p class="hp" id="hpTheMountain">hp:</p></input>
-              <div class="characterInfo middle">
-                <p class="text">The Mountain</p>
-              </div>
-            </div>
-          </h2>
-        </div>
-        <div class="buttonArea">
-          <button class="gameButtons" type="button" name="button" id="attackButton">Attack</button>
-          <button class="gameButtons" type="button" name="button" id="retreatButton">Retreat</button>
-          <button class="gameButtons" type="button" name="button" id="surrenderButton">Surrender</button>
-        </div>
-        <div class="graveyardArea">
-          <h2>Graveyard:</h2>
-          <div class="graveyard" id="graveyard1"></div>
-          <div class="graveyard" id="graveyard1"></div>
-          <div class="graveyard" id="graveyard1"></div>
-        </div>
-      </div>
-      <br>
+    <div id="characterSection" class="row">
+        <h1>Characters Available to Fight As:</h1>
+
     </div>
-  </div>
-  <br>
-<footer>&copyBenMercerCodes</footer>
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+    <div class="row">
+        <h1>Your Character</h1>
+        <div id="defenders">
+
+        </div>
+    </div>
+
+    <div id="buttons" class="row">
+        <button id="attack">Attack</button>
+    </div>
+    <div class="row">
+        <h1>Your Enemy</h1>
+        <div id="attackers">
+
+        </div>
+    </div>
 </body>
 </html>
