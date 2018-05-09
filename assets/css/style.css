@@ -15,19 +15,26 @@ body{
     font-family: 'Cinzel Decorative', cursive;
 }
 
+.navbar {
+  margin-bottom: 25px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .instructions {
-  background-color: #272e36;
+  background-color: rgb(52,58,64);
   width: 25%;
+  min-width: 200px;
   float: right;
   margin-right: 5%;
   border-radius: 10px;
   padding: 2%;
   position: relative;
-
+  margin-bottom: 10px;
 }
 
 .dropbtn {
-  background-color: #272e36;
+  background-color: rgb(52,58,64);
   color: white;
   width: 100%;
   font-size: 18px;
@@ -47,6 +54,7 @@ body{
   width:100%;
   border-radius: 10px;
   position: absolute;
+  color: white;
 
 }
 
@@ -62,7 +70,6 @@ body{
   display: block;
   background-color: #272e36;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-
 }
 
 .show {
@@ -71,22 +78,36 @@ body{
 
 .character{
     text-align: center;
-    background-color: aliceblue;
-    border: solid 1px black;
+    background-color: rgb(52,58,64);
+    color: white;
     float: left;
-    margin: 2%;
+    margin: 1%;
+    padding: 1%;
     height: 180px;
     width: 180px;
+    border-radius: 10px;
 }
+
+.gameArea {
+  border: 0px solid black;
+}
+
 .gameArea img {
     padding: 5px 5px;
     max-height: 120px;
     border-radius: 50%;
 }
+
+.gameArea h1 {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
 .rows
 {
     width:100%;
     overflow: auto;
+    margin-top: 25px;
 }
 
 #footer {
@@ -94,11 +115,11 @@ body{
   position: absolute;
   bottom: 0;
   left: 0;
-  color: rgb(244, 243, 243);
+  color: white;
   width: 100%;
   position: absolute;
   text-align: center;
-  background-color: rgb(52,58,64);
+  background-color: black;
   padding: 1% 0% 0% 0%;
   z-index: 1;
 }
