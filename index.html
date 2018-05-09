@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,13 +43,25 @@
   <button class="dropbtn">Instructions</button>
   <div id="dropDown" class="dropDown-Instructions">
     <p id="instructions">Click on a character to play with. Then click on an opponent in
-        The defender area and click the "attack" button to deal damage to them.
+        The character area and click the "attack" button to deal damage to them.
         If that opponent is defeated, click a new opponent and continue to attack.
         If all opponents are defeated you win and your score is increased by 3. Retreat
         and you lose 1 point. Surrender and you lose 2.
     </p>
   </div>
-</div>
+  </div>
+    <!--score area-->
+  <div class="scoreArea">
+    <h2>Wins:
+      <p id="wins">0</p>
+    </h2>
+    <h2>Defeats:
+      <p id="losses">0</p>
+    </h2>
+    <h2>Score:
+      <p id="userScore">0</p>
+    </h2>
+  </div>
 
 <!--game area-->
 <div class="container-fluid gameArea text-center">
@@ -75,42 +86,42 @@
     </div>
   </div>
 </div>
-  <!--footer-->
-<section id="footer">
-  <div class="container-fluid">
-    <div class="row text-center text-xs-center text-sm-center text-md-left">
-      <div class="col-xs-12 col-sm-12 col-md-3">
-        <h5 class="footerh5">Quick Links</h5>
-        <ul class="list-unstyled quick-links">
-          <li><a class="links" href="https://arbittrage.com/"><i class="fa fa-angle-double-right links"></i>Home</a></li>
-          <li><a class="links" href="contact.html"><i class="fa fa-angle-double-right links"></i>Contact</a></li>
-          <li><a class="links" href="https://github.com/mercerbe/Arbittrage"><i class="fa fa-angle-double-right links"></i>Github Repo</a></li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5">
-        <ul class="list-unstyled list-inline text-center">
-          <h5 class="footerh5">Connect With Me:</h5>
-          <li class="list-inline-item"><a href="https://www.facebook.com" target="_blank"><img width="35px" src="assets/images/facebook.png" /></a></li>
-          <li class="list-inline-item"><a href="https://twitter.com" target="_blank"><img width="35px" src="assets/images/twitter.png" /></a></li>
-          <li class="list-inline-item"><a href="https://www.linkedin.com" target="_blank"><img width="35px" src="assets/images/linkedin.png" /></a></li>
-          <li class="list-inline-item"><a href="https://www.google.com" target="_blank"><img width="35px" src="assets/images/google.png" /></a></li>
-          <li class="list-inline-item"><a href="https://github.com/mercerbe/Arbittrage" target="_blank"><img width="35px" src="assets/images/github.png" /></a></li>
-          <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"><img width="35px" src="assets/images/instagram.png" /></a></li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-3 text-md-right text-sm-center text-xs-center">
-        <h5 class="footerh5">Other Resources</h5>
-        <ul class="list-unstyled quick-links">
-          <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>Backstretch</a></li>
-          <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>jQuery</a></li>
-          <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>Watch Game of Thrones</a></li>
-        </ul>
-      </div>
+</div>
+<!--footer-->
+<section id="footer" class="footer">
+<div class="container-fluid">
+  <div class="row text-center text-xs-center text-sm-center text-md-left">
+    <div class="col-xs-12 col-sm-12 col-md-3">
+      <h5 class="footerh5">Quick Links</h5>
+      <ul class="list-unstyled quick-links">
+        <li><a class="links" href="https://arbittrage.com/"><i class="fa fa-angle-double-right links"></i>Home</a></li>
+        <li><a class="links" href="contact.html"><i class="fa fa-angle-double-right links"></i>Contact</a></li>
+        <li><a class="links" href="https://github.com/mercerbe/Arbittrage"><i class="fa fa-angle-double-right links"></i>Github Repo</a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5">
+      <ul class="list-unstyled list-inline text-center">
+        <h5 class="footerh5">Connect With Me:</h5>
+        <li class="list-inline-item"><a href="https://www.facebook.com" target="_blank"><img width="35px" src="assets/images/facebook.png" /></a></li>
+        <li class="list-inline-item"><a href="https://twitter.com" target="_blank"><img width="35px" src="assets/images/twitter.png" /></a></li>
+        <li class="list-inline-item"><a href="https://www.linkedin.com" target="_blank"><img width="35px" src="assets/images/linkedin.png" /></a></li>
+        <li class="list-inline-item"><a href="https://www.google.com" target="_blank"><img width="35px" src="assets/images/google.png" /></a></li>
+        <li class="list-inline-item"><a href="https://github.com/mercerbe/Arbittrage" target="_blank"><img width="35px" src="assets/images/github.png" /></a></li>
+        <li class="list-inline-item"><a href="https://www.instagram.com" target="_blank"><img width="35px" src="assets/images/instagram.png" /></a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 text-md-right text-sm-center text-xs-center">
+      <h5 class="footerh5">Other Resources</h5>
+      <ul class="list-unstyled quick-links">
+        <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>Backstretch</a></li>
+        <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>jQuery</a></li>
+        <li><a class="links" href="" target="_blank"><i class="fa fa-angle-double-right links"></i>Watch Game of Thrones</a></li>
+      </ul>
     </div>
   </div>
-  <p class="h6 copy">&copyBenMercerCodes</p>
-</section>
 </div>
+<p class="h6 copy">&copyBenMercerCodes</p>
+</section>
   <!--scripts-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

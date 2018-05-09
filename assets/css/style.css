@@ -13,12 +13,14 @@ body{
     min-width: 100%;
     box-sizing: inherit;
     font-family: 'Cinzel Decorative', cursive;
+    position: relative;
 }
 
 .navbar {
   margin-bottom: 25px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .instructions {
@@ -31,6 +33,7 @@ body{
   padding: 2%;
   position: relative;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .dropbtn {
@@ -42,7 +45,7 @@ body{
   cursor: pointer;
   font-family: 'Cinzel Decorative', cursive;
   transition: 0.5s ease;
-
+  text-shadow: 2px 2px 2px black;
 }
 
 .dropbtn:hover {
@@ -70,17 +73,39 @@ body{
   display: block;
   background-color: #272e36;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 2px black;
 }
 
 .show {
   display: block;
 }
 
+#wins,
+#losses,
+#userScore{
+  font-size: 20px;
+  color: #db8b5a;
+  margin-top: 3px;
+}
+
+.scoreArea {
+  background-color: #272e36;
+  width: 25%;
+  margin-left: 5%;
+  border-radius: 10px;
+  padding: 2%;
+  text-shadow: 2px 2px 2px black;
+}
+
+.scoreArea h2, p {
+  color: white;
+}
+
 .character{
     text-align: center;
     background-color: rgb(52,58,64);
     color: white;
-    float: left;
+    display: inline-block;
     margin: 1%;
     padding: 1%;
     height: 180px;
@@ -107,10 +132,11 @@ body{
 {
     width:100%;
     overflow: auto;
-    margin-top: 25px;
+    margin: 25px 0px 25px 0px;
 }
 
 #footer {
+  margin-top: 1%;
   font-family: 'Roboto', sans-serif;
   position: absolute;
   bottom: 0;

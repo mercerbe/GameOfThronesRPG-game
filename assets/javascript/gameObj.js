@@ -43,7 +43,7 @@ function attack(a, b)
     health -= damage;
     console.log(health);
     $(b).attr("health",health);
-    $(b + " .health").text(health);
+    $(b + " .health").text("hp: " + health);
 };
 
 function combatantSelected()
@@ -82,12 +82,12 @@ $(document).ready(function() {
         if(combatantSelected())
         {
             $(this).attr("id","attacker");
-            $(this).css("background-color", "red");
+            $(this).css("background-color", "rgb(241,0,73)");
             $("#attackers").html(this);
         }
         else{
             $(this).attr("id","defender");
-            $(this).css("background-color", "green")
+            $(this).css("background-color", "rgb(48,180,112)")
             $("#defenders").html(this);
         }
       });
@@ -105,15 +105,3 @@ $(document).ready(function() {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-//Notes:
