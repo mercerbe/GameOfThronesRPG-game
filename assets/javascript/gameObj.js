@@ -43,7 +43,7 @@ function attack(a, b)
     health -= damage;
     console.log(health);
     $(b).attr("health",health);
-    $(b + " .health").text("hp: " + health);
+    $(b + " .health").text(health);
 };
 
 function combatantSelected()
@@ -74,7 +74,7 @@ $(document).ready(function() {
         character.attr("counterAttackPower",characters[i].counterAttackPower);
         character.append(name);
         character.append(image);
-        character.append(health);
+        character.append("hp", health);
         characterDiv.append(character);
     }
 
