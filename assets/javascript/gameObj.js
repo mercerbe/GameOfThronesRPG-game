@@ -1,3 +1,4 @@
+$(document).ready(function() {
 //backstretch
 $("body").backstretch("assets/images/GOTbackground3.jpg");
 //Instructions
@@ -5,6 +6,7 @@ $("#instructions").hide();
 $(".dropbtn").click(function() {
   $("#instructions").toggle(600);
 });
+
 //characters
 var danny = {
     name:"Daenerys",
@@ -35,33 +37,16 @@ var drogo = {
     image: "./assets/images/drogo1.jpg"
 }
 
-function attack(a, b)
-{
-    var damage = Math.floor(Math.random()*parseInt($(a).attr("attackPower")));
-    console.log(damage);
-    var health = parseInt($(b).attr("health"));
-    health -= damage;
-    console.log(health);
-    $(b).attr("health",health);
-    $(b + " .health").text(health);
-};
 
-function combatantSelected()
-{
-    if($("#defenders").html().trim() == "")
-    {
-        return false;
-    }
-    return true;
-};
+const wins = $("#wins");
+var winsCount = null;
+const defeats = $("#defeats");
+var defeatsCount = null;
+const score = $("#score");
+var scoreCount = null;
 
-$(document).ready(function() {
-  const wins = $("#wins");
-  var winsCount = 0;
-  const defeats = $("#defeats");
-  var defeatsCount = 0;
-  const score = $("#score");
-  var scoreCount = 0;
+
+function startGame(){
     var characters = [danny,jonSnow,nightKing,drogo]
     characterDiv = $("#characterSection")
     for (var i = 0; i < characters.length; i++) {
@@ -83,6 +68,27 @@ $(document).ready(function() {
         character.append("hp", health);
         characterDiv.append(character);
     }
+
+    function attack(a, b)
+    {
+        var damage = Math.floor(Math.random()*parseInt($(a).attr("attackPower")));
+        console.log("damage: " + damage);
+        var health = parseInt($(b).attr("health"));
+        health -= damage;
+        console.log("health: " + health);
+        $(b).attr("health",health);
+        $(b + " .health").text(health);
+        console.log("-----------------");
+    };
+
+    function combatantSelected()
+    {
+        if($("#defenders").html().trim() == "")
+        {
+            return false;
+        }
+        return true;
+    };
 
     $("#characterSection").on("click", ".character", function() {
         if(combatantSelected())
@@ -110,20 +116,27 @@ $(document).ready(function() {
             scoreCount -= 3;
             console.log("score: " + scoreCount);
             score.text(scoreCount);
+            $("#attackers").html("");
+            $("#defenders").html("");
+            $("#characterSection").html("");
+            startGame();
         }
         else if(parseInt($("#attacker").attr("health"))<= 0)
         {
             $("#attackers").html("");
 
         }
-        if ("charactersSection".is(":empty")) {
+        if ($("#charactersSection").is(":empty")) {
           winsCount++;
           console.log("wins: " + winsCount);
           wins.text(winsCount);
           scoreCount += 5;
           console.log("score: " + scoreCount);
           score.text(scoreCount);
-
+          $("#attackers").html("");
+          $("#defenders").html("");
+          $("#characterSection").html("");
+          startGame();
         }
     });
     $("#buttons").on('click', '#reset', function() {
@@ -136,5 +149,11 @@ $(document).ready(function() {
       scoreCount -= 2;
       console.log("score: " + scoreCount);
       score.text(scoreCount);
+      $("#attackers").html("");
+      $("#defenders").html("");
+      $("#characterSection").html("");
+      startGame();
     })
+  };
+  startGame();
 });
