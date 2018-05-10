@@ -56,6 +56,12 @@ function combatantSelected()
 };
 
 $(document).ready(function() {
+  const wins = $("#wins");
+  var winsCount = 0;
+  const defeats = $("#defeats");
+  var defeatsCount = 0;
+  const score = $("#score");
+  var scoreCount = 0;
     var characters = [danny,jonSnow,nightKing,drogo]
     characterDiv = $("#characterSection")
     for (var i = 0; i < characters.length; i++) {
@@ -98,10 +104,37 @@ $(document).ready(function() {
         if(parseInt($("#defender").attr("health")) <= 0)
         {
             $("#defenders").html("");
+            defeatsCount++;
+            console.log("defeats: " + defeatsCount);
+            defeats.text(defeatsCount);
+            scoreCount -= 3;
+            console.log("score: " + scoreCount);
+            score.text(scoreCount);
         }
         else if(parseInt($("#attacker").attr("health"))<= 0)
         {
             $("#attackers").html("");
+
+        }
+        if ("charactersSection".is(":empty")) {
+          winsCount++;
+          console.log("wins: " + winsCount);
+          wins.text(winsCount);
+          scoreCount += 5;
+          console.log("score: " + scoreCount);
+          score.text(scoreCount);
+
         }
     });
+    $("#buttons").on('click', '#reset', function() {
+      location.reload();
+    });
+    $("#buttons").on('click', '#retreat', function() {
+      defeatsCount++;
+      console.log("defeats: " + defeatsCount);
+      defeats.text(defeatsCount);
+      scoreCount -= 2;
+      console.log("score: " + scoreCount);
+      score.text(scoreCount);
+    })
 });

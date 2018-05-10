@@ -81,8 +81,8 @@ body{
 }
 
 #wins,
-#losses,
-#userScore{
+#defeats,
+#score{
   font-size: 20px;
   color: #db8b5a;
   margin-top: 3px;
