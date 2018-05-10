@@ -113,7 +113,7 @@ function startGame(){
             defeatsCount++;
             console.log("defeats: " + defeatsCount);
             defeats.text(defeatsCount);
-            scoreCount -= 3;
+            scoreCount -= 2;
             console.log("score: " + scoreCount);
             score.text(scoreCount);
             $("#attackers").html("");
@@ -146,7 +146,7 @@ function startGame(){
       defeatsCount++;
       console.log("defeats: " + defeatsCount);
       defeats.text(defeatsCount);
-      scoreCount -= 2;
+      scoreCount -= 1;
       console.log("score: " + scoreCount);
       score.text(scoreCount);
       $("#attackers").html("");
