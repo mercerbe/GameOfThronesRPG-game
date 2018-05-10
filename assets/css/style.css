@@ -131,7 +131,6 @@ body{
 .rows
 {
     width:100%;
-    overflow: auto;
     margin: 25px 0px 25px 0px;
 }
 
